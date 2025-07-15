@@ -110,4 +110,4 @@ MIT License. See `LICENSE` file for details.
 
 ## ✨ Made by
 
-Your Name – [@Nitya-Mehta](https://github.com/Nitya-Mehta)
+[@Nitya-Mehta](https://github.com/Nitya-Mehta)
