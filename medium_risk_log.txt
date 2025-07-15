@@ -1,0 +1,37 @@
+
+==== MEDIUM RISK ====2025-07-15 16:02:04.771104
+Loose cable running across the hallway in the packing section. No immediate injuries, but a worker tripped and almost fell. The area is usually crowded during shift changes.
+
+==== MEDIUM RISK ====2025-07-15 16:35:15.511261
+---
+
+Safety Incident Report
+
+Date: October 26, 2023
+Time: 16:11
+Location: Packing section hallway
+
+Description: Loose cable across the hallway in the packing section caused a worker to trip and nearly fall. The area is usually crowded during shift changes.
+Injuries Reported: None
+Witnesses: Not mentioned
+Actions Taken: The cable should be immediately secured or removed from the walkway.  A thorough inspection of the area for other trip hazards should be conducted.
+Recommendations: All cables in the packing section should be properly secured and labeled.  Regular inspections for trip hazards should be implemented, particularly in high-traffic areas like hallways.  Consider cable management systems to prevent future incidents. Improved lighting in the area might also help visibility.
+
+---
+
+==== MEDIUM RISK ====2025-07-15 16:35:18.748627
+---
+
+Safety Incident Report
+
+Date: October 26, 2023
+Time: 16:11
+Location: Packing section hallway
+
+Description: Loose cable across the hallway in the packing section caused a worker to trip and nearly fall. The area is usually crowded during shift changes.
+Injuries Reported: None
+Witnesses: Not mentioned
+Actions Taken: The cable should be immediately secured or removed from the walkway.  A thorough inspection of the area for other trip hazards should be conducted.
+Recommendations: All cables in the packing section should be properly secured and labeled.  Regular inspections for trip hazards should be implemented, particularly in high-traffic areas like hallways.  Consider cable management systems to prevent future incidents. Improved lighting in the area might also help visibility.
+
+---
