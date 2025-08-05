@@ -113,7 +113,7 @@ def classify_hazard(text):
     prompt = f"""
 You are a certified workplace safety AI. Analyze the given hazard description and classify its severity. Then generate a structured safety report in the exact format below.
 
-Return a JSON with:
+Return a JSON with, where High=1, Medium=2, Low=3:
 - hazard_level (High, Medium, Low)
 - severity (1, 2, 3)
 - report_text: structured like this 👇
@@ -141,7 +141,6 @@ Input: '{text}'
 Respond ONLY with the JSON object.
 
 """
-
     model = genai.GenerativeModel("models/gemini-1.5-flash")
     response = model.generate_content(prompt)
     match = re.search(r"\{.*\}", response.text, re.DOTALL)
