@@ -10,44 +10,94 @@ from datetime import datetime
 st.set_page_config(page_title="AlertAid Hazard Classifier", layout="centered")
 st.markdown("""
 <style>
-/* Apply global dark background */
-body, .main, .stApp {
-    background-color: #0e1117 !important;
-    color: #fafafa !important;
+/* Custom Font & Scrollbar */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+html, body, .main, .stApp {
+    font-family: 'Inter', sans-serif;
+    color: #f1f1f1;
+    scroll-behavior: smooth;
 }
 
-/* Style for hazard report box */
-.report-box {
-    background-color: #1f2937;  /* dark gray */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
-    margin-top: 20px;
+/* Title & Header Styling */
+h1, h2, .stTitle {
+    font-weight: 600;
+    color: #facc15 !important;
 }
 
-/* Style the <pre> text inside report box */
-.report-box pre {
-    background-color: #1f2937;
-    color: #f1f5f9;
-    font-family: monospace;
-    font-size: 14px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    padding: 10px;
-    margin: 0;
-    border: none;
+/* Input area */
+textarea, input {
+    background-color: #1f2937 !important;
+    color: #f9fafb !important;
+    border: 1px solid #4b5563 !important;
+    border-radius: 8px !important;
+}
+
+/* Buttons */
+button[kind="primary"] {
+    background-color: #2563eb !important;
+    color: white !important;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    transition: 0.3s ease-in-out;
+}
+button[kind="primary"]:hover {
+    background-color: #1d4ed8 !important;
+    transform: scale(1.05);
 }
 
 /* Highlight badge */
 .highlight {
-    background-color: #facc15;
-    color: black;
-    padding: 4px 10px;
-    border-radius: 5px;
-    font-weight: bold;
+    background: linear-gradient(90deg, #fde68a, #fcd34d);
+    color: #1e293b;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Report Box */
+.report-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    margin-top: 25px;
+    transition: 0.3s ease;
+}
+.report-box:hover {
+    transform: translateY(-4px);
+}
+
+/* Code Output Area */
+.report-box pre {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #e0f2fe;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin: 0;
+}
+
+/* Spinner customization */
+.css-1v0mbdj {
+    color: #facc15 !important;
+}
+
+/* Download button */
+.css-1offfwp {
+    background-color: #22c55e !important;
+    color: white !important;
+    font-weight: 600;
+    border-radius: 8px;
+}
+.css-1offfwp:hover {
+    background-color: #16a34a !important;
 }
 </style>
 """, unsafe_allow_html=True)
+
 
 st.title("🚨 AlertAid")
 st.subheader("AI-powered Workplace Hazard Analyzer")
@@ -86,11 +136,12 @@ Recommendations: [how to prevent recurrence]
 
 Now analyze this:
 
-Input: "{text}"
+Input: '{text}'
 
 Respond ONLY with the JSON object.
 
 """
+
     model = genai.GenerativeModel("models/gemini-1.5-flash")
     response = model.generate_content(prompt)
     match = re.search(r"\{.*\}", response.text, re.DOTALL)
