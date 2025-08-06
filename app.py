@@ -8,96 +8,6 @@ from datetime import datetime
 
 # --- Setup ---
 st.set_page_config(page_title="AlertAid Hazard Classifier", layout="centered")
-st.markdown("""
-<style>
-/* Custom Font & Scrollbar */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
-
-html, body, .main, .stApp {
-    font-family: 'Inter', sans-serif;
-    color: #f1f1f1;
-    scroll-behavior: smooth;
-}
-
-/* Title & Header Styling */
-h1, h2, .stTitle {
-    font-weight: 600;
-    color: #facc15 !important;
-}
-
-/* Input area */
-textarea, input {
-    background-color: #1f2937 !important;
-    color: #f9fafb !important;
-    border: 1px solid #4b5563 !important;
-    border-radius: 8px !important;
-}
-
-/* Buttons */
-button[kind="primary"] {
-    background-color: #2563eb !important;
-    color: white !important;
-    font-weight: bold;
-    border-radius: 8px;
-    padding: 0.5rem 1rem;
-    transition: 0.3s ease-in-out;
-}
-button[kind="primary"]:hover {
-    background-color: #1d4ed8 !important;
-    transform: scale(1.05);
-}
-
-/* Highlight badge */
-.highlight {
-    background: linear-gradient(90deg, #fde68a, #fcd34d);
-    color: #1e293b;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-weight: 600;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
-
-/* Report Box */
-.report-box {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-    margin-top: 25px;
-    transition: 0.3s ease;
-}
-.report-box:hover {
-    transform: translateY(-4px);
-}
-
-/* Code Output Area */
-.report-box pre {
-    font-family: 'Courier New', monospace;
-    font-size: 14px;
-    color: #e0f2fe;
-    white-space: pre-wrap;
-    word-break: break-word;
-    margin: 0;
-}
-
-/* Spinner customization */
-.css-1v0mbdj {
-    color: #facc15 !important;
-}
-
-/* Download button */
-.css-1offfwp {
-    background-color: #22c55e !important;
-    color: white !important;
-    font-weight: 600;
-    border-radius: 8px;
-}
-.css-1offfwp:hover {
-    background-color: #16a34a !important;
-}
-</style>
-""", unsafe_allow_html=True)
-
 
 st.title("🚨 AlertAid")
 st.subheader("AI-powered Workplace Hazard Analyzer")
@@ -222,3 +132,4 @@ if os.path.exists("medium_risk_log.txt"):
     )
 else:
     st.info("🗂 No medium risk log file available yet.")
+
